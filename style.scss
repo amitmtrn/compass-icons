@@ -2,7 +2,7 @@
 //TODO: add size changes (media query) for specific size icons
 @import "compass/utilities/sprites/base";
 
-$icons: sprite-map("icons/*.png"); // creating the icons sprite
+$icons: sprite-map("icons/*.png"); // creating the icons sprite define images dir at config.rb `images_dir` and `http_images_dir`
 
 // load the sprite to 'i' tag
 i {
