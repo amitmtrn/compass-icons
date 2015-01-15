@@ -1,0 +1,23 @@
+@import "compass/utilities/sprites/base";
+
+$icons: sprite-map("icons/*.png"); // creating the icons sprite
+
+// load the sprite to 'i' tag
+i {
+  background: $icons;
+  display: inline-block;
+}
+
+// this mixin porpus is the be able to change icons on different cases
+@mixin icon-style($icon-mixin) {
+  background-position: sprite-position($icons, $icon-mixin);
+  @include sprite-dimensions($icons, $icon-mixin);
+}
+
+// create class for each icon with the icon name
+@each $i in sprite_names($icons) {
+  .#{$i} {
+    background-position: sprite-position($icons, $i);
+    @include sprite-dimensions($icons, $i);
+  }
+}
